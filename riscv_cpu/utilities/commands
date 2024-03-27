@@ -1,0 +1,1 @@
+make run_top_tb PROG=./testcode/riscv_mp4test.s CLOCK_PERIOD_PS=5

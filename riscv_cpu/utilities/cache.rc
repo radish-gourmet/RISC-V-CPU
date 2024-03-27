@@ -1,0 +1,131 @@
+Magic 271485
+Revision Verdi_R-2020.12-SP1-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 25 1920 847 233 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/gourani2/group_mp4/fa23_ece411_pipeline_enthusiasts/mp4/sim/dump.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 190.890000
+cursor 15.07026315789
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 5
+; marker line index
+markerPos 58
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "Control"
+activeDirFile "" "/home/gourani2/group_mp4/fa23_ece411_pipeline_enthusiasts/mp4/sim/dump.fsdb"
+addSignal -h 15 /cache_dut_tb/dut/control/cache_en
+addSignal -h 15 -holdScope cache_hit
+addSignal -h 15 -holdScope cache_write
+addSignal -h 15 -holdScope clk
+addSignal -h 15 -holdScope dirty_en
+addSignal -h 15 -holdScope dirty_val
+addSignal -h 15 -holdScope invalidate
+addSignal -h 15 -holdScope mem_read
+addSignal -h 15 -holdScope mem_resp
+addSignal -h 15 -holdScope mem_write
+addSignal -h 15 -holdScope pmem_read
+addSignal -h 15 -holdScope pmem_resp
+addSignal -h 15 -holdScope pmem_write
+addSignal -h 15 -holdScope rst
+addSignal -h 15 -holdScope tag_en
+addSignal -h 15 -holdScope valid_en
+addGroup "Datapath"
+addSignal -h 15 /cache_dut_tb/dut/datapath/cache_en
+addSignal -h 15 -holdScope cache_hit
+addSignal -h 15 -holdScope cache_write
+addSignal -h 15 -holdScope clk
+addSignal -h 15 -holdScope dirty_en
+addSignal -h 15 -holdScope dirty_val
+addSignal -h 15 -holdScope invalidate
+addSignal -h 15 -holdScope mem_address[31:0]
+addSignal -h 15 -holdScope mem_byte_enable[31:0]
+addSignal -h 15 -holdScope mem_rdata[255:0]
+addSignal -h 15 -holdScope mem_read
+addSignal -h 15 -holdScope mem_wdata[255:0]
+addSignal -h 15 -holdScope mem_write
+addSignal -h 15 -holdScope pmem_address[31:0]
+addSignal -h 15 -holdScope pmem_rdata[255:0]
+addSignal -h 15 -holdScope pmem_resp
+addSignal -h 15 -holdScope pmem_wdata[255:0]
+addSignal -h 15 -holdScope tag_en
+addSignal -h 15 -holdScope valid_en
+addGroup "Useful"
+addSignal -h 15 -UNSIGNED /cache_dut_tb/dut/control/next_state[31:0]
+addSignal -h 15 -UNSIGNED -holdScope state[31:0]
+addSignal -h 15 /cache_dut_tb/dut/datapath/cache[16:0]
+addSignal -h 15 -holdScope dirty[16:0]
+addSignal -h 15 -holdScope tag[16:0]
+addSignal -h 15 -holdScope valid[16:0]
+addGroup "Mem & Pmem"
+addSignal -h 15 /cache_dut_tb/dut/clk
+addSignal -h 15 -holdScope mem_read
+addSignal -h 15 -holdScope mem_resp
+addSignal -h 15 -holdScope mem_write
+addSignal -h 15 -holdScope mem_address[31:0]
+addSignal -h 15 -holdScope mem_byte_enable[31:0]
+addSignal -h 15 -holdScope mem_rdata[255:0]
+addSignal -h 15 -holdScope mem_wdata[255:0]
+addSignal -h 15 -holdScope pmem_read
+addSignal -h 15 -holdScope pmem_resp
+addSignal -h 15 -holdScope pmem_write
+addSignal -h 15 -holdScope pmem_address[31:0]
+addSignal -h 15 -holdScope pmem_rdata[255:0]
+addSignal -h 15 -holdScope pmem_wdata[255:0]
+addGroup "G6"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/home/gourani2/group_mp4/fa23_ece411_pipeline_enthusiasts/mp4/sim/dump.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/_vcs_unit__3211616038"
+"/cache_dut_tb"
+"/cache_dut_tb/dut"
+
+SCOPE_LIST_BEGIN
+"/_vcs_unit__3211616038"
+"/cache_dut_tb"
+"/cache_dut_tb/dut"
+"/cache_dut_tb/dut/datapath"
+"/cache_dut_tb/dut/control"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

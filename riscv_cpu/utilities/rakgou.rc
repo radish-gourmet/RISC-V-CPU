@@ -1,0 +1,352 @@
+Magic 271485
+Revision Verdi_R-2020.12-SP1-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 25 1920 381 234 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/gourani2/group_mp4/fa23_ece411_pipeline_enthusiasts/mp4/sim/dump.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 3.860446 84.929819
+cursor 12.90768662617
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 127
+; marker line index
+markerPos 144
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/gourani2/group_mp4/fa23_ece411_pipeline_enthusiasts/mp4/sim/dump.fsdb"
+addSignal -h 15 /top_tb/dut/cpu/clk
+addSignal -h 15 -holdScope rst
+addGroup "Imem"
+addSignal -h 15 /top_tb/dut/imem_address[31:0]
+addSignal -h 15 -holdScope imem_read
+addSignal -h 15 -holdScope imem_rdata[31:0]
+addSignal -h 15 -holdScope imem_resp
+addGroup "Dmem" -e FALSE
+addSignal -h 15 /top_tb/dut/dmem_address[31:0]
+addSignal -h 15 -holdScope dmem_rdata[31:0]
+addSignal -h 15 -holdScope dmem_read
+addSignal -h 15 -holdScope dmem_resp
+addSignal -h 15 -holdScope dmem_wdata[31:0]
+addSignal -h 15 -holdScope dmem_wmask[3:0]
+addSignal -h 15 -holdScope dmem_write
+addGroup "Fetch" -e FALSE
+addSignal -h 15 /top_tb/dut/cpu/FET/clk
+addSignal -h 15 -holdScope rst
+addSignal -h 15 -holdScope dside_stall_n
+addSignal -h 15 -holdScope imem_address[31:0]
+addSignal -h 15 -holdScope imem_rdata[31:0]
+addSignal -h 15 -holdScope imem_read
+addSignal -h 15 -holdScope imem_resp
+addSignal -h 15 -holdScope pc_write
+addSignal -h 15 -holdScope rvfi_ifid
+addSignal -expanded -c ID_PURPLE5 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope ifid_out
+addSignal -h 15 -UNSIGNED -HEX -holdScope ifid_out.pc[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ifid_out.instr[31:0]
+addGroup "Decode" -e FALSE
+addSignal -h 15 /top_tb/dut/cpu/DEC/rd_addr[4:0]
+addSignal -h 15 -holdScope rd_data[31:0]
+addSignal -h 15 -holdScope reg_write
+addSignal -h 15 -holdScope ifid_i
+addSignal -expanded -c ID_PURPLE5 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope idex_o
+addSignal -h 15 -UNSIGNED -HEX -holdScope idex_o.wb[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope idex_o.m[2:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope idex_o.ex[2:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope idex_o.pc[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope idex_o.rs1[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope idex_o.rs2[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope idex_o.rs1_out[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope idex_o.rs2_out[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope idex_o.imm[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope idex_o.funct3[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope idex_o.rd_addr[4:0]
+addSignal -h 15 -UNSIGNED -holdScope idex_o.opcode[6:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope idex_o.rs1_addr[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope idex_o.rs2_addr[4:0]
+addGroup "Execute" -e FALSE
+addSignal -h 15 /top_tb/dut/cpu/EX/idex
+addSignal -expanded -c ID_PURPLE5 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope exmem
+addSignal -h 15 -UNSIGNED -HEX -holdScope exmem.wb[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope exmem.m[2:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope exmem.pc[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope exmem.zero
+addSignal -h 15 -UNSIGNED -HEX -holdScope exmem.alu_result[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope exmem.rs2_out[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope exmem.rd_addr[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope exmem.imm[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope exmem.funct3[2:0]
+addGroup "Mem" -e FALSE
+addSignal -h 15 /top_tb/dut/cpu/MEM/dmem_address[31:0]
+addSignal -h 15 -holdScope dmem_read
+addSignal -h 15 -holdScope dmem_wdata[31:0]
+addSignal -h 15 -holdScope dmem_wmask[3:0]
+addSignal -h 15 -holdScope dmem_write
+addSignal -h 15 -holdScope dside_stall_n
+addSignal -c ID_PURPLE5 -ls solid -lw 1 -h 15 -holdScope exmem
+addSignal -c ID_PURPLE5 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope memwb
+addGroup "Write-back" -e FALSE
+addSignal -h 15 /top_tb/dut/cpu/WB/memwb_i
+addSignal -h 15 -holdScope rd_addr[4:0]
+addSignal -h 15 -holdScope reg_wdata[31:0]
+addSignal -h 15 -holdScope reg_write
+addGroup "Regfile" -e FALSE
+addSignal -expanded -h 15 /top_tb/dut/cpu/DEC/REGFILE/data[0:31]
+addSignal -h 15 -holdScope data[0][31:0]
+addSignal -h 15 -holdScope data[1][31:0]
+addSignal -h 15 -holdScope data[2][31:0]
+addSignal -h 15 -holdScope data[3][31:0]
+addSignal -h 15 -holdScope data[4][31:0]
+addSignal -h 15 -holdScope data[5][31:0]
+addSignal -h 15 -holdScope data[6][31:0]
+addSignal -h 15 -holdScope data[7][31:0]
+addSignal -h 15 -holdScope data[8][31:0]
+addSignal -h 15 -holdScope data[9][31:0]
+addSignal -h 15 -holdScope data[10][31:0]
+addSignal -h 15 -holdScope data[11][31:0]
+addSignal -h 15 -holdScope data[12][31:0]
+addSignal -h 15 -holdScope data[13][31:0]
+addSignal -h 15 -holdScope data[14][31:0]
+addSignal -h 15 -holdScope data[15][31:0]
+addSignal -h 15 -holdScope data[16][31:0]
+addSignal -h 15 -holdScope data[17][31:0]
+addSignal -h 15 -holdScope data[18][31:0]
+addSignal -h 15 -holdScope data[19][31:0]
+addSignal -h 15 -holdScope data[20][31:0]
+addSignal -h 15 -holdScope data[21][31:0]
+addSignal -h 15 -holdScope data[22][31:0]
+addSignal -h 15 -holdScope data[23][31:0]
+addSignal -h 15 -holdScope data[24][31:0]
+addSignal -h 15 -holdScope data[25][31:0]
+addSignal -h 15 -holdScope data[26][31:0]
+addSignal -h 15 -holdScope data[27][31:0]
+addSignal -h 15 -holdScope data[28][31:0]
+addSignal -h 15 -holdScope data[29][31:0]
+addSignal -h 15 -holdScope data[30][31:0]
+addSignal -h 15 -holdScope data[31][31:0]
+addGroup "Memsys"
+addSubGroup "IBus" -e FALSE
+addSignal -h 15 /top_tb/dut/i_bus/address[31:0]
+addSignal -h 15 -holdScope mem_byte_enable256[31:0]
+addSignal -h 15 -holdScope mem_byte_enable[3:0]
+addSignal -h 15 -holdScope mem_rdata256[255:0]
+addSignal -h 15 -holdScope mem_rdata[31:0]
+addSignal -h 15 -holdScope mem_wdata256[255:0]
+addSignal -h 15 -holdScope mem_wdata[31:0]
+endSubGroup "IBus"
+addSubGroup "ICache"
+addSubGroup "CACHE"
+addSignal -h 15 /top_tb/dut/i_cache/clk
+addSignal -h 15 -holdScope rst
+addSignal -h 15 -holdScope mem_address[31:0]
+addSignal -h 15 -holdScope mem_byte_enable[31:0]
+addSignal -h 15 -holdScope mem_rdata[255:0]
+addSignal -h 15 -holdScope mem_read
+addSignal -h 15 -holdScope mem_resp
+addSignal -h 15 -holdScope mem_wdata[255:0]
+addSignal -h 15 -holdScope mem_write
+addSignal -h 15 -holdScope pmem_address[31:0]
+addSignal -h 15 -holdScope pmem_rdata[255:0]
+addSignal -h 15 -holdScope pmem_read
+addSignal -h 15 -holdScope pmem_resp
+addSignal -h 15 -holdScope pmem_wdata[255:0]
+addSignal -h 15 -holdScope pmem_write
+endSubGroup "CACHE"
+addSubGroup "CALC" -e FALSE
+addSignal -h 15 /top_tb/dut/i_cache/CALC/caac_o
+addSignal -h 15 -holdScope clk
+addSignal -h 15 -holdScope mem_address[31:0]
+addSignal -h 15 -holdScope mem_byte_enable[31:0]
+addSignal -h 15 -holdScope mem_read
+addSignal -h 15 -holdScope mem_wdata[31:0]
+addSignal -h 15 -holdScope mem_write
+addSignal -h 15 -holdScope rst
+endSubGroup "CALC"
+addSubGroup "ACCESS" -e FALSE
+addSubGroup "IO" -e FALSE
+addSignal -h 15 /top_tb/dut/i_cache/ACCESS/clk
+addSignal -h 15 -holdScope rst
+addSignal -h 15 -holdScope caac_i
+addSignal -h 15 -holdScope mem_rdata[255:0]
+addSignal -h 15 -holdScope mem_resp
+addSignal -h 15 -holdScope pmem_address[31:0]
+addSignal -h 15 -holdScope pmem_rdata[255:0]
+addSignal -h 15 -holdScope pmem_read
+addSignal -h 15 -holdScope pmem_resp
+addSignal -h 15 -holdScope pmem_wdata[255:0]
+addSignal -h 15 -holdScope pmem_write
+endSubGroup "IO"
+addSubGroup "TAG_RAM"
+addSignal -h 15 /top_tb/dut/i_cache/ACCESS/tag_array/addr0_reg[3:0]
+addSignal -h 15 -holdScope din0_reg[22:0]
+addSignal -h 15 -holdScope mem[0:15]
+addSignal -h 15 -holdScope web0_reg
+endSubGroup "TAG_RAM"
+addSubGroup "DATA_RAM" -e FALSE
+addSignal -h 15 /top_tb/dut/i_cache/ACCESS/data_array/addr0_reg[3:0]
+addSignal -h 15 -holdScope din0_reg[255:0]
+addSignal -h 15 -holdScope mem[0:15]
+addSignal -h 15 -holdScope web0_reg
+endSubGroup "DATA_RAM"
+endSubGroup "ACCESS"
+endSubGroup "ICache"
+addSubGroup "Dbus" -e FALSE
+addSignal -h 15 /top_tb/dut/d_bus/address[31:0]
+addSignal -h 15 -holdScope mem_byte_enable256[31:0]
+addSignal -h 15 -holdScope mem_byte_enable[3:0]
+addSignal -h 15 -holdScope mem_rdata256[255:0]
+addSignal -h 15 -holdScope mem_rdata[31:0]
+addSignal -h 15 -holdScope mem_wdata256[255:0]
+addSignal -h 15 -holdScope mem_wdata[31:0]
+endSubGroup "Dbus"
+addSubGroup "DCache" -e FALSE
+addSignal -h 15 /top_tb/dut/d_cache/clk
+addSignal -h 15 -holdScope rst
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem_address[31:0]
+addSignal -h 15 -holdScope mem_byte_enable[31:0]
+addSignal -h 15 -holdScope mem_rdata[255:0]
+addSignal -h 15 -holdScope mem_read
+addSignal -h 15 -holdScope mem_resp
+addSignal -h 15 -holdScope mem_wdata[255:0]
+addSignal -h 15 -holdScope mem_write
+addSignal -h 15 -holdScope pmem_address[31:0]
+addSignal -h 15 -holdScope pmem_rdata[255:0]
+addSignal -h 15 -holdScope pmem_read
+addSignal -h 15 -holdScope pmem_resp
+addSignal -h 15 -holdScope pmem_wdata[255:0]
+addSignal -h 15 -holdScope pmem_write
+addSignal -h 15 -UNSIGNED /top_tb/dut/d_cache/control/state[31:0]
+addSignal -expanded -h 15 /top_tb/dut/d_cache/datapath/cache[16:0]
+addSignal -h 15 -holdScope cache[13][255:0]
+addSignal -h 15 -holdScope tag[16:0]
+endSubGroup "DCache"
+addSubGroup "Adaptor" -e FALSE
+addSignal -h 15 /top_tb/dut/arbiter/clk
+addSignal -h 15 -holdScope rst
+addSignal -h 15 -holdScope address_i[31:0]
+addSignal -h 15 -holdScope daddress_i[31:0]
+addSignal -h 15 -holdScope dline_i[255:0]
+addSignal -h 15 -holdScope dline_o[255:0]
+addSignal -h 15 -holdScope dread_i
+addSignal -h 15 -holdScope dresp_o
+addSignal -h 15 -holdScope dwrite_i
+addSignal -h 15 -holdScope iaddress[31:0]
+addSignal -h 15 -holdScope iline_i[255:0]
+addSignal -h 15 -holdScope iline_o[255:0]
+addSignal -h 15 -holdScope iread_i
+addSignal -h 15 -holdScope iresp_o
+addSignal -h 15 -holdScope iwrite_i
+addSignal -h 15 -holdScope line_i[255:0]
+addSignal -h 15 -holdScope read_i
+addSignal -h 15 -holdScope write_i
+addSignal -h 15 -holdScope line_o[255:0]
+addSignal -h 15 -holdScope resp_o
+endSubGroup "Adaptor"
+addSubGroup "Cacheline adaptor" -e FALSE
+addSignal -h 15 /top_tb/dut/cacheline_adaptor/clk
+addSignal -h 15 -holdScope rst
+addSignal -h 15 -holdScope address_i[31:0]
+addSignal -h 15 -holdScope burst_i[63:0]
+addSignal -h 15 -holdScope line_i[255:0]
+addSignal -h 15 -holdScope read_i
+addSignal -h 15 -holdScope resp_i
+addSignal -h 15 -holdScope write_i
+addSignal -h 15 -holdScope address_o[31:0]
+addSignal -h 15 -holdScope burst_o[63:0]
+addSignal -h 15 -holdScope line_o[255:0]
+addSignal -h 15 -holdScope read_o
+addSignal -h 15 -holdScope resp_o
+addSignal -h 15 -holdScope write_o
+endSubGroup "Cacheline adaptor"
+addGroup "G14"
+addSignal -h 15 /top_tb/dut/cpu/FET/imem_resp
+addSignal -h 15 -holdScope dside_stall_n
+addGroup "G12"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/home/gourani2/group_mp4/fa23_ece411_pipeline_enthusiasts/mp4/sim/dump.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/_vcs_unit__321037842"
+"/top_tb"
+"/top_tb/dut"
+"/top_tb/dut/arbiter"
+"/top_tb/dut/cacheline_adaptor"
+"/top_tb/dut/cpu"
+"/top_tb/dut/cpu/FET"
+"/top_tb/dut/cpu/MEM"
+"/top_tb/dut/d_cache"
+"/top_tb/dut/d_cache/datapath"
+"/top_tb/dut/i_bus"
+"/top_tb/dut/i_cache"
+"/top_tb/dut/i_cache/ACCESS"
+"/top_tb/dut/i_cache/ACCESS/data_array"
+"/top_tb/dut/i_cache/ACCESS/tag_array"
+
+SCOPE_LIST_BEGIN
+"/_vcs_unit__321037842"
+"/_vcs_unit__2402747050"
+"/_vcs_unit__2114835879"
+"/_vcs_unit__255728028"
+"/_vcs_unit__2930790028"
+"/top_tb/dut/cpu/DEC"
+"/top_tb/dut/cpu/EX"
+"/top_tb"
+"/top_tb/dut"
+"/top_tb/dut/cpu"
+"/top_tb/dut/cpu/MEM"
+"/top_tb/dut/cpu/WB"
+"/top_tb/dut/cpu/DEC/REGFILE"
+"/top_tb/dut/arbiter"
+"/top_tb/dut/cacheline_adaptor"
+"/top_tb/dut/d_cache"
+"/top_tb/dut/i_cache"
+"/top_tb/dut/i_bus"
+"/top_tb/dut/d_bus"
+"/top_tb/dut/cpu/FET"
+"/top_tb/dut/d_cache/datapath"
+"/top_tb/dut/d_cache/control"
+"/top_tb/dut/i_cache/ACCESS"
+"/top_tb/dut/i_cache/CALC"
+"/top_tb/dut/i_cache/ACCESS/data_array"
+"/top_tb/dut/i_cache/ACCESS/data_array/MEM_READ0"
+"/top_tb/dut/i_cache/ACCESS/tag_array"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

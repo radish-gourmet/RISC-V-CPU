@@ -1,0 +1,2 @@
+make run_top_tb PROG=./testcode/competition/coremark_rv32i.elf
+make spike ELF=./testcode/competition/coremark_rv32i.elf
